@@ -1,6 +1,6 @@
-﻿using CRUD_Process.DBContext;
-using CRUD_Process.Repository;
-using CRUD_Process.Services;
+﻿using Construction_site.DBContext;
+using Construction_site.Repository;
+using Construction_site.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

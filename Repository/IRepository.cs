@@ -1,4 +1,4 @@
-﻿namespace CRUD_Process.Repository
+﻿namespace Construction_site.Repository
 {
     public interface IRepository<T> where T : class
     {

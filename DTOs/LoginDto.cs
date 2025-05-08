@@ -1,4 +1,4 @@
-﻿namespace CRUD_Process.DTOs
+﻿namespace Construction_site.DTOs
 {
     public class LoginDto
     {

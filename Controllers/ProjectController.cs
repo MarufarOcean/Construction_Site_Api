@@ -1,18 +1,18 @@
-﻿using CRUD_Process.Models;
-using CRUD_Process.Repository;
+﻿using Construction_site.Models;
+using Construction_site.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CRUD_Process.Controllers
+namespace Construction_site.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProjectController : ControllerBase
     {
         private readonly IRepository<Product> _productRepository;
 
-        public ProductsController(IRepository<Product> productRepository)
+        public ProjectController(IRepository<Product> productRepository)
         {
             _productRepository = productRepository;
         }
@@ -26,7 +26,7 @@ namespace CRUD_Process.Controllers
 
         //[Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductsById(int id)
+        public async Task<IActionResult> GetPrjectById(int id)
         {
             var product = await _productRepository.GetById(id);
             return Ok(product);
@@ -34,7 +34,7 @@ namespace CRUD_Process.Controllers
 
         //[Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromBody] Product product)
+        public async Task<IActionResult> AddProject([FromBody] Product product)
         {
             await _productRepository.Add(product);
             return Ok();
@@ -43,15 +43,15 @@ namespace CRUD_Process.Controllers
 
         //[Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        public async Task<IActionResult> UpdateProject(int id, [FromBody] Product product)
         {
             var existingProduct = await _productRepository.GetById(id);
             if (existingProduct == null) return NotFound();
 
-            existingProduct.Name = product.Name;
+            existingProduct.Title = product.Title;
             existingProduct.Description = product.Description;
-            existingProduct.Price = product.Price;
-            existingProduct.stock = product.stock;
+            existingProduct.ImageUrl = product.ImageUrl;
+            existingProduct.CreatedAt = product.CreatedAt;
 
             await _productRepository.Update(existingProduct);
             return Ok(existingProduct);
@@ -59,7 +59,7 @@ namespace CRUD_Process.Controllers
 
         //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProject(int id)
         {
             await _productRepository.Delete(id);
             return Ok();

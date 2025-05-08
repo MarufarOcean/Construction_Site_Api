@@ -1,6 +1,6 @@
-﻿using CRUD_Process.Models;
+﻿using Construction_site.Models;
 using Microsoft.EntityFrameworkCore;
-namespace CRUD_Process.DBContext
+namespace Construction_site.DBContext
 {
     
     public class AppDbContext:DbContext
@@ -9,5 +9,6 @@ namespace CRUD_Process.DBContext
 
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
     }
 }

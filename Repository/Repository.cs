@@ -1,7 +1,8 @@
-﻿using CRUD_Process.DBContext;
+﻿using Construction_site.DBContext;
 using Microsoft.EntityFrameworkCore;
+using Construction_site.Repository;
 
-namespace CRUD_Process.Repository
+namespace Construction_site.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

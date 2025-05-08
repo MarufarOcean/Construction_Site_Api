@@ -1,4 +1,4 @@
-﻿namespace CRUD_Process.Models
+﻿namespace Construction_site.Models
 {
     public class User
     {

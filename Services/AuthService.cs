@@ -1,10 +1,10 @@
-﻿using CRUD_Process.Models;
+﻿using Construction_site.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace CRUD_Process.Services
+namespace Construction_site.Services
 {
     public class AuthService
     {
